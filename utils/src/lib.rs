@@ -20,6 +20,10 @@ pub fn get_lines(input_file: &str) -> Vec<String> {
     return reader.lines().map(|line| line.unwrap()).collect();
 }
 
+pub fn get_chars(input_file: &str) -> Vec<Vec<char>> {
+    get_lines(input_file).iter().map(|line| line.chars().collect()).collect()
+}
+
 pub fn get_line(input_file: &str) -> String {
     get_lines(input_file).get(0).unwrap().to_string()
 }
