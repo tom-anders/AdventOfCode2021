@@ -1,0 +1,33 @@
+[package]
+name = "main"
+version = "0.1.0"
+authors = ["Tom Praschan <13141438+tom-anders@users.noreply.github.com>"]
+edition = "2018"
+
+[dependencies]
+utils = { path = "../utils" }
+day1 = { path = "../days/day1/" }
+day2 = { path = "../days/day2/" }
+day3 = { path = "../days/day3/" }
+day4 = { path = "../days/day4/" }
+day5 = { path = "../days/day5/" }
+day6 = { path = "../days/day6/" }
+day7 = { path = "../days/day7/" }
+day8 = { path = "../days/day8/" }
+day9 = { path = "../days/day9/" }
+day10 = { path = "../days/day10/" }
+day11 = { path = "../days/day11/" }
+day12 = { path = "../days/day12/" }
+day13 = { path = "../days/day13/" }
+day14 = { path = "../days/day14/" }
+day15 = { path = "../days/day15/" }
+day16 = { path = "../days/day16/" }
+day17 = { path = "../days/day17/" }
+day18 = { path = "../days/day18/" }
+day19 = { path = "../days/day19/" }
+day20 = { path = "../days/day20/" }
+day21 = { path = "../days/day21/" }
+day22 = { path = "../days/day22/" }
+day23 = { path = "../days/day23/" }
+day24 = { path = "../days/day24/" }
+day25 = { path = "../days/day25/" }

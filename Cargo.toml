@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "main",
+    "utils",
+    "days/day*",
+]
