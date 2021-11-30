@@ -20,7 +20,10 @@ pub fn get_lines(input_file: &str) -> Vec<String> {
     return reader.lines().map(|line| line.unwrap()).collect();
 }
 
+pub fn get_line(input_file: &str) -> String {
+    get_lines(input_file).get(0).unwrap().to_string()
+}
+
 pub fn get_lines_as<T: std::str::FromStr>(input_file: &str) -> Vec<T> {
     get_lines(input_file).iter().map(|line| line.parse::<T>().ok().unwrap()).collect()
 }
-
