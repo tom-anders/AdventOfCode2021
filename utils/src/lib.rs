@@ -1,6 +1,3 @@
-use std::fs::File;
-use std::io::{BufRead, BufReader};
-
 pub struct Solution {
     pub part1: String,
     pub part2: String,
@@ -16,18 +13,27 @@ impl Solution {
 }
 
 pub fn get_lines(input_file: &str) -> Vec<String> {
-    let reader = BufReader::new(File::open(input_file).expect(format!("Cannot open {}", input_file).as_str()));
-    return reader.lines().map(|line| line.unwrap()).collect();
+    return std::fs::read_to_string(input_file)
+        .unwrap()
+        .lines()
+        .map(|s| s.to_owned())
+        .collect();
 }
 
 pub fn get_chars(input_file: &str) -> Vec<Vec<char>> {
-    get_lines(input_file).iter().map(|line| line.chars().collect()).collect()
+    get_lines(input_file)
+        .iter()
+        .map(|line| line.chars().collect())
+        .collect()
 }
 
 pub fn get_line(input_file: &str) -> String {
-    get_lines(input_file).get(0).unwrap().to_string()
+    get_lines(input_file).first().unwrap().to_string()
 }
 
 pub fn get_lines_as<T: std::str::FromStr>(input_file: &str) -> Vec<T> {
-    get_lines(input_file).iter().map(|line| line.parse::<T>().ok().unwrap()).collect()
+    get_lines(input_file)
+        .iter()
+        .map(|line| line.parse().ok().unwrap())
+        .collect()
 }
