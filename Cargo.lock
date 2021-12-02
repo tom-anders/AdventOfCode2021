@@ -28,6 +28,7 @@ dependencies = [
 name = "day10"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -35,6 +36,7 @@ dependencies = [
 name = "day11"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -42,6 +44,7 @@ dependencies = [
 name = "day12"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -49,6 +52,7 @@ dependencies = [
 name = "day13"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -56,6 +60,7 @@ dependencies = [
 name = "day14"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -63,6 +68,7 @@ dependencies = [
 name = "day15"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -70,6 +76,7 @@ dependencies = [
 name = "day16"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -77,6 +84,7 @@ dependencies = [
 name = "day17"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -84,6 +92,7 @@ dependencies = [
 name = "day18"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -91,6 +100,7 @@ dependencies = [
 name = "day19"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -107,6 +117,7 @@ dependencies = [
 name = "day20"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -114,6 +125,7 @@ dependencies = [
 name = "day21"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -121,6 +133,7 @@ dependencies = [
 name = "day22"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -128,6 +141,7 @@ dependencies = [
 name = "day23"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -135,6 +149,7 @@ dependencies = [
 name = "day24"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -142,6 +157,7 @@ dependencies = [
 name = "day25"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -149,6 +165,7 @@ dependencies = [
 name = "day3"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -156,6 +173,7 @@ dependencies = [
 name = "day4"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -163,6 +181,7 @@ dependencies = [
 name = "day5"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -170,6 +189,7 @@ dependencies = [
 name = "day6"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -177,6 +197,7 @@ dependencies = [
 name = "day7"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -184,6 +205,7 @@ dependencies = [
 name = "day8"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
@@ -191,6 +213,7 @@ dependencies = [
 name = "day9"
 version = "0.1.0"
 dependencies = [
+ "parse-display",
  "utils",
 ]
 
