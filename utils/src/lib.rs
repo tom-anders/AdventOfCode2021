@@ -13,11 +13,11 @@ impl Solution {
 }
 
 pub fn get_lines(input_file: &str) -> Vec<String> {
-    return std::fs::read_to_string(input_file)
+    std::fs::read_to_string(input_file)
         .unwrap()
         .lines()
         .map(|s| s.to_owned())
-        .collect();
+        .collect()
 }
 
 pub fn get_chars(input_file: &str) -> Vec<Vec<char>> {

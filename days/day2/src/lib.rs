@@ -1,46 +1,53 @@
+use parse_display::{Display, FromStr};
 use utils::get_lines;
 
-type Pos = num::Complex<i64>;
-
-fn advance(line: &String, pos: &mut Pos) {
-    let split: Vec<_> = line.split(" ").collect();
-    let dir = match split[0] {
-        "forward" => Pos::new(1, 0),
-        "down" => Pos::new(0, 1),
-        "up" => Pos::new(0, -1),
-        _ => unreachable!(),
-    };
-    let inc: i64 = split[1].parse().unwrap();
-
-    *pos += dir * inc;
+#[derive(Display, FromStr)]
+enum Instruction {
+    #[display("up {0}")]
+    Up(i64),
+    #[display("down {0}")]
+    Down(i64),
+    #[display("forward {0}")]
+    Forward(i64),
 }
 
-fn advance_b(line: &String, pos: &mut Pos, aim: &mut i64) {
-    let split: Vec<_> = line.split(" ").collect();
-    let inc: i64 = split[1].parse().unwrap();
-    match split[0] {
-        "down" => *aim += inc,
-        "up" => *aim -= inc,
-        "forward" => {
-            *pos += inc + Pos::new(0, 1) * *aim * inc;
-        }
-        _ => unreachable!(),
-    };
+fn part1(instructions: &[Instruction]) -> i64 {
+    let (hor, depth) = instructions
+        .iter()
+        .fold((0, 0), |(mut hor, mut depth), instr| {
+            match instr {
+                Instruction::Down(x) => depth += x,
+                Instruction::Up(x) => depth -= x,
+                Instruction::Forward(x) => hor += x,
+            }
+            (hor, depth)
+        });
+    hor * depth
+}
+
+fn part2(instructions: &[Instruction]) -> i64 {
+    let (hor, depth, _) =
+        instructions
+            .iter()
+            .fold((0, 0, 0), |(mut hor, mut depth, mut aim), instr| {
+                match instr {
+                    Instruction::Down(x) => aim += x,
+                    Instruction::Up(x) => aim -= x,
+                    Instruction::Forward(x) => {
+                        hor += x;
+                        depth += aim * x;
+                    }
+                }
+                (hor, depth, aim)
+            });
+    hor * depth
 }
 
 pub fn solve(_input_file: &str) -> utils::Solution {
-    let mut pos = Pos::new(0, 0);
-    for line in get_lines(_input_file) {
-        advance(&line, &mut pos);
-    }
-    let part1 = pos.re * pos.im;
+    let instructions: Vec<Instruction> = get_lines(_input_file)
+        .iter()
+        .map(|l| l.parse().unwrap())
+        .collect();
 
-    pos = Pos::new(0, 0);
-    let mut aim = 0;
-    for line in get_lines(_input_file) {
-        advance_b(&line, &mut pos, &mut aim);
-    }
-    let part2 = pos.re * pos.im;
-
-    utils::Solution::new(part1, part2)
+    utils::Solution::new(part1(&instructions), part2(&instructions))
 }
