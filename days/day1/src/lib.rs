@@ -1,3 +1,5 @@
+use utils::{Input, Solution};
+
 fn count_increase(v: &Vec<i64>, skip: usize) -> usize {
     v.iter()
         .zip(v.iter().skip(skip))
@@ -5,8 +7,8 @@ fn count_increase(v: &Vec<i64>, skip: usize) -> usize {
         .count()
 }
 
-pub fn solve(input_file: &str) -> utils::Solution {
-    let report = utils::get_lines_as(input_file);
+pub fn solve(input: Input) -> Solution {
+    let report = input.parse();
 
-    utils::Solution::new(count_increase(&report, 1), count_increase(&report, 3))
+    Solution::new(count_increase(&report, 1), count_increase(&report, 3))
 }

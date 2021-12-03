@@ -1,3 +1,6 @@
-pub fn solve(_input_file: &str) -> utils::Solution {
-    utils::Solution::new("", "")
+#![allow(unused_imports)]
+use utils::{Solution, Input};
+
+pub fn solve(input: Input) -> Solution {
+    Solution::new("", "")
 }

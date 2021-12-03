@@ -1,3 +1,5 @@
+use std::io::BufRead;
+
 pub struct Solution {
     pub part1: String,
     pub part2: String,
@@ -12,28 +14,29 @@ impl Solution {
     }
 }
 
-pub fn get_lines(input_file: &str) -> Vec<String> {
-    std::fs::read_to_string(input_file)
-        .unwrap()
-        .lines()
-        .map(|s| s.to_owned())
-        .collect()
+pub struct Input {
+    pub raw: String,
 }
 
-pub fn get_chars(input_file: &str) -> Vec<Vec<char>> {
-    get_lines(input_file)
-        .iter()
-        .map(|line| line.chars().collect())
-        .collect()
+impl Input {
+    pub fn new(input_file: &str) -> Input {
+        Input {
+            raw: std::fs::read_to_string(input_file).unwrap(),
+        }
+    }
+
+    pub fn parse<T: std::str::FromStr>(&self) -> Vec<T> {
+        self.raw
+            .lines()
+            .map(|line| line.parse().ok().unwrap())
+            .collect()
+    }
+
+    pub fn chars(&self) -> Vec<Vec<char>> {
+        self.parse::<String>()
+            .iter()
+            .map(|line| line.chars().collect())
+            .collect()
+    }
 }
 
-pub fn get_line(input_file: &str) -> String {
-    get_lines(input_file).first().unwrap().to_string()
-}
-
-pub fn get_lines_as<T: std::str::FromStr>(input_file: &str) -> Vec<T> {
-    get_lines(input_file)
-        .iter()
-        .map(|line| line.parse().ok().unwrap())
-        .collect()
-}

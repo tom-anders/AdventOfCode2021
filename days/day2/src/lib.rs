@@ -1,5 +1,5 @@
+use utils::{Solution, Input};
 use parse_display::{Display, FromStr};
-use utils::get_lines;
 
 #[derive(Display, FromStr)]
 enum Instruction {
@@ -43,11 +43,8 @@ fn part2(instructions: &[Instruction]) -> i64 {
     hor * depth
 }
 
-pub fn solve(_input_file: &str) -> utils::Solution {
-    let instructions: Vec<Instruction> = get_lines(_input_file)
-        .iter()
-        .map(|l| l.parse().unwrap())
-        .collect();
+pub fn solve(input: Input) -> Solution {
+    let instructions = input.parse();
 
-    utils::Solution::new(part1(&instructions), part2(&instructions))
+    Solution::new(part1(&instructions), part2(&instructions))
 }

@@ -1,5 +1,5 @@
 fn main() {
-    let days: Vec<fn(&str) -> utils::Solution> = vec![
+    let days: Vec<fn(utils::Input) -> utils::Solution> = vec![
         day1::solve,
         day2::solve,
         day3::solve,
@@ -36,7 +36,7 @@ fn main() {
     let default_input = format!("input/{}.in", day);
     let input_file = args.get(2).unwrap_or(&default_input);
 
-    let solution = solution(&input_file);
+    let solution = solution(utils::Input::new(input_file));
 
     println!("Part 1 solution: {}", solution.part1);
     println!("Part 2 solution: {}", solution.part2);
