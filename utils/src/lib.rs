@@ -25,6 +25,10 @@ impl Input {
         }
     }
 
+    pub fn lines(&self) -> Vec<String> {
+        self.parse()
+    }
+
     pub fn parse<T: std::str::FromStr>(&self) -> Vec<T> {
         self.raw
             .lines()
@@ -37,6 +41,10 @@ impl Input {
             .iter()
             .map(|line| line.chars().collect())
             .collect()
+    }
+
+    pub fn get_line(&self, pos: usize) -> String {
+        self.raw.lines().nth(pos).unwrap().to_string()
     }
 }
 
