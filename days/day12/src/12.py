@@ -13,7 +13,6 @@ class Node:
 
     def find_paths_1(self, path = []):
         if self.name == 'end':
-            print("Found path:", path)
             return 1
 
         next = [n for n in self.nodes if not n.name in path or n.is_big()]
@@ -59,9 +58,5 @@ part1 = nodes['start'].find_paths_1()
 print("Part 1:", part1)
 
 part2 = sum([nodes['start'].find_paths_2(n.name) for n in nodes.values() if not n.is_big() and not n.name == 'start' and not n.name == 'end'])
-
-# for p in nodes['start'].find_paths_2(""):
-#     if not p in paths_part2:
-#         paths_part2.append(p)
 
 print("Part 2:", part1 + part2)
