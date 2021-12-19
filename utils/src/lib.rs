@@ -27,6 +27,10 @@ impl Input {
         self.parse()
     }
 
+    pub fn as_vec(&self) -> Vec<i64> {
+        self.raw.split(',').map(|s| s.trim().parse().unwrap()).collect()
+    }
+
     pub fn parse<T: std::str::FromStr>(&self) -> Vec<T> {
         self.raw
             .lines()

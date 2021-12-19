@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 utils = { path = "../../utils" }
 parse-display = '0.5.3'
+priority-queue = '1.2.1'
