@@ -50,3 +50,22 @@ impl Input {
     }
 }
 
+pub trait ToDecimal {
+    fn to_decimal(&self) -> usize;
+}
+
+impl ToDecimal for [usize] {
+    fn to_decimal(&self) -> usize {
+        self.iter()
+            .rev()
+            .enumerate()
+            .fold(0, |acc, (i, x)| acc + x * 2_usize.pow(i as u32))
+    }
+}
+
+impl ToDecimal for Vec<usize> {
+    fn to_decimal(&self) -> usize {
+        self.as_slice().to_decimal()
+    }
+}
+
